@@ -1,12 +1,9 @@
 {
   "name": "ngdeploy",
   "description": "Generate a command line application for node.js.",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "homepage": "https://github.com/mbejda/ngdeploy",
-  "author": {
-    "name": "Milos Bejda",
-    "url": "https://github.com/null"
-  },
+  "author": "Milos Bejda (https://github.com/mbejda)",
   "repository": {
     "type": "git",
     "url": "git://github.com/mbejda/ngdeploy.git"
@@ -22,7 +19,9 @@
   ],
   "keywords": [
     "cli",
-    "command line"
+    "command line",
+    "deploy",
+    "angular"
   ],
   "preferGlobal": true,
   "bin": {
@@ -33,7 +32,7 @@
     "node": ">=0.8"
   },
   "scripts": {
-    "test": "mocha -R test"
+    "test": "mocha"
   },
   "dependencies": {
     "async": "^1.5.2",
@@ -49,13 +48,19 @@
     "minimist": "~0.0.8",
     "progress": "^1.1.8",
     "prompt": "^1.0.0",
+    "readdirp": "^2.0.0",
     "request": "^2.69.0",
     "s3": "^4.4.0",
+    "s3-sync": "^1.0.1",
+    "single-line-log": "^1.1.1",
     "superagent": "^1.8.1",
     "sync-request": "^3.0.0",
     "verbalize": "~0.1.1"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "grunt-strip-code": "^1.0.4",
     "verb": "~0.2.0"
-  }
+  },
+  "license": "ISC"
 }
