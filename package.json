@@ -1,7 +1,7 @@
 {
   "name": "ngdeploy",
   "description": "Generate a command line application for node.js.",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "homepage": "https://github.com/mbejda/ngdeploy",
   "author": "Milos Bejda (https://github.com/mbejda)",
   "repository": {
