@@ -27,6 +27,11 @@ program
     });
 
 program
+    .command('global')
+    .description('upload the distribution folder into the cloud. Take it away!')
+    .action(ng.upload);
+
+program
     .command('upload')
     .description('upload the distribution folder into the cloud. Take it away!')
     .action(ng.upload);
@@ -39,6 +44,8 @@ program
 program.on('--help', function(){
     ng.additional_help()
 });
+
+
 
 program.parse(process.argv);
 
