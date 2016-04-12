@@ -1,8 +1,9 @@
-#!/usr/bin/env node
+#! /usr/bin/env node
+'use strict';
 
 var program = require('commander')
     , ng = require('../lib/cli')
-    , pkg = require('../package.json');
+    , pkg = require('../package');
 
 const chalk = require("chalk");
 
@@ -15,26 +16,24 @@ program
 
 program
     .command('init <appName> <dist>')
+    .option("-a, --accesskey <key>","Set the access key")
     .description("Initialize ngdeploy with <appName> and <distribution folder>")
-    .action(function(appName,dist){
-        if(program.test){
-            ng.name(appName);
-            ng.dist(dist);
-            ng.create_configuration({"id":"123"});
-        }else{
-            ng.init(appName,dist);
-        }
+    .action(function(appName,dist,opts){
+            ng.init(appName,dist,opts);
     });
-
-program
-    .command('global')
-    .description('upload the distribution folder into the cloud. Take it away!')
-    .action(ng.upload);
 
 program
     .command('upload')
     .description('upload the distribution folder into the cloud. Take it away!')
     .action(ng.upload);
+
+program
+    .command('set')
+    .option("-a, --accesskey <key>","Set the access key")
+    .action(function(opts){
+        ng.update(opts);
+    });
+
 
 program
     .command('clean')
@@ -45,8 +44,7 @@ program.on('--help', function(){
     ng.additional_help()
 });
 
-
-
+ng.readngdeploy();
 program.parse(process.argv);
 
 if(program.args.length==0)
