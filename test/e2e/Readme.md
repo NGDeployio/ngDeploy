@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>RequestTimeout</Code><Message>Your socket connection to the server was not read from or written to within the timeout period. Idle connections will be closed.</Message><RequestId>8D5CB4D1F26854D9</RequestId><HostId>RO4hJuLVsSwLxEZNga64A7gEvB27Bd4oZQfzv4z0CT2WM9sxgIqfsM6kNUA3AURIbkKWHECGw6Q=</HostId></Error>
