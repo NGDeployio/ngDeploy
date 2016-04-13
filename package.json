@@ -1,7 +1,7 @@
 {
   "name": "ngdeploy",
   "description": "Generate a command line application for node.js.",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "homepage": "https://github.com/mbejda/ngdeploy",
   "author": "Milos Bejda (https://github.com/mbejda)",
   "repository": {
@@ -32,10 +32,10 @@
     "node": ">=0.8"
   },
   "scripts": {
-    "push-fury":"fury push ngdeploy-*.tgz",
-    "commit-git":"git add . && git commit -m 'version upping' && git push",
+    "push-fury": "fury push ngdeploy-*.tgz",
+    "commit-git": "git add . && git commit -m 'version upping' && git push",
     "patch-release": "npm version patch && npm pack",
-    "build":"npm run commit-git && npm run patch-release && npm run push-fury",
+    "build": "npm run commit-git && npm run patch-release && npm run push-fury",
     "test": "mocha"
   },
   "dependencies": {
