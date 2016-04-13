@@ -32,7 +32,10 @@
     "node": ">=0.8"
   },
   "scripts": {
+    "push-fury":"fury push ngdeploy-*.tgz",
+    "commit-git":"git add . && git commit -m 'version upping' && git push",
     "patch-release": "npm version patch && npm pack",
+    "build":"npm run commit-git && npm run patch-release && npm run push-fury",
     "test": "mocha"
   },
   "dependencies": {
