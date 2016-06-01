@@ -39,8 +39,18 @@ program
 program
     .command('set')
     .option("-a, --accesskey <key>","Set the access key")
+    .option("-g, --global","use the global configuration file ~/.ngdeploy")
     .action(function(opts){
-        ng.update(opts);
+        ng.update(opts._name == "set",opts,opts.global);
+    });
+
+program
+    .command('get')
+    .option("-a, --accesskey","get the access key")
+    .option("-n, --name","get the ngDeploy name")
+    .option("-g, --global", "use the global configuration file ~/.ngdeploy")
+    .action(function(opts){
+        ng.update(opts._name == "set",opts,opts.global);
     });
 
 program
