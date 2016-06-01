@@ -16,7 +16,7 @@ program
 
 program
     .command('init <appName> <dist>')
-    .option("-a, --accesskey <key>","Set the access key")
+    .option("-a, --accessToken <key>","Set the access key")
     .description("Initialize ngdeploy with <appName> and <distribution folder>")
     .action(function(appName,dist,opts){
             ng.init(appName,dist,opts);
@@ -29,7 +29,7 @@ program
 
 program
     .command('set')
-    .option("-a, --accesskey <key>","Set the access key")
+    .option("-a, --accessToken <key>","Set the access key")
     .action(function(opts){
         ng.update(opts);
     });
