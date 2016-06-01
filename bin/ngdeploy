@@ -2,8 +2,8 @@
 'use strict';
 
 var program = require('commander')
-    , ng = require('../lib/cli')
-    , pkg = require('../package');
+    , ng    = require('../lib/cli')
+    , pkg   = require('../package');
 
 const chalk = require("chalk");
 
@@ -23,6 +23,15 @@ program
     });
 
 program
+    .command('create <appName>')
+    .option("-a, --accesskey <key>","use the access key")
+    .description("Create the app <appName>")
+    .action(function(appName,opts){
+        ng.create({ngDeployUrl: appName, name: appName},opts.accesskey);
+    });
+
+
+program
     .command('upload')
     .description('upload the distribution folder into the cloud. Take it away!')
     .action(ng.upload);
@@ -34,6 +43,21 @@ program
         ng.update(opts);
     });
 
+program
+    .command('delete <appname>')
+    .option("-a, --accesskey <key>","use the access key")
+    .description('delete an app from the server.')
+    .action(function(args, opts){
+        ng.delete(args, opts.accesskey);
+    });
+
+program
+    .command('list')
+    .option("-a, --accesskey <key>","use the access key")
+    .description('list all of your apps')
+    .action(function(opts){
+        ng.list(opts.accesskey);
+    });
 
 program
     .command('clean')
