@@ -8,15 +8,14 @@ var program = require('commander')
 const chalk = require("chalk");
 
 program
-    .version(pkg.version)
-    .usage('[command]');
+    .version(pkg.version);
 
 program
     .option("-t,--test","Test mode that avoids ajax requests.");
 
 program
     .command('init <appName> <dist>')
-    .option("-a, --accessToken <key>","Set the access token")
+    .option("-a, --accessToken <token>","Set the access token")
     .description("Initialize ngdeploy with <appName> and <distribution folder>")
     .action(function(appName,dist,opts){
             ng.init(appName,dist,opts);
@@ -24,12 +23,11 @@ program
 
 program
     .command('create <appName>')
-    .option("-a, --accessToken <key>","use the access token")
+    .option("-a, --accessToken <token>","use the access token")
     .description("Create the app <appName>")
     .action(function(appName,opts){
         ng.create({ngDeployUrl: appName, name: appName},opts.accessToken);
     });
-
 
 program
     .command('upload')
@@ -38,17 +36,27 @@ program
 
 program
     .command('set')
-    .option("-a, --accessToken <key>","use the access token")
+    .option("-a, --accessToken <token>","use the access token")
     .action(function(opts){
         ng.update(opts);
     });
 
+//program
+//    .command('delete <appname>')
+//    .option("-a, --accessToken <token>","use the access token")
+//    .description('delete an app from the server.')
+//    .action(function(args, opts){
+//        ng.delete(args, opts.accessToken);
+//    });
+
+
 program
-    .command('delete <appname>')
-    .option("-a, --accessToken <token>","use the access token")
-    .description('delete an app from the server.')
-    .action(function(args, opts){
-        ng.delete(args, opts.accessToken);
+    .command('promote')
+    .option("-t, --to <source>","set source [dev,stage,prod]",/^(staging|production)$/i,"staging")
+    //.option("--target <target>","set target [stage,prod]",/^(stage|prod)$/i,"stage")
+    .description('Promote an application from source to target')
+    .action(function(opts){
+        ng.promote(opts["to"]);
     });
 
 program
