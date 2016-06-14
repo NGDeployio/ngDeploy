@@ -52,9 +52,9 @@ program
 
 program
     .command('promote')
-    .option("-t, --to <source>","set source [dev,stage,prod]",/^(staging|production)$/i,"staging")
+    .option("-t, --to <source>","what stage to promote to [staging,production]",/^(staging|production)$/i,"staging")
     //.option("--target <target>","set target [stage,prod]",/^(stage|prod)$/i,"stage")
-    .description('Promote an application from source to target')
+    .description('Promote an application to staging or production.')
     .action(function(opts){
         ng.promote(opts["to"]);
     });
