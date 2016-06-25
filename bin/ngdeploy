@@ -43,22 +43,6 @@ program
     });
 
 program
-    .command('set')
-    .option("-a, --accessToken <token>","use the access token")
-    .action(function(opts){
-        ng.setAccessKey(opts.accessToken,0);
-    });
-
-//program
-//    .command('delete <appname>')
-//    .option("-a, --accessToken <token>","use the access token")
-//    .description('delete an app from the server.')
-//    .action(function(args, opts){
-//        ng.delete(args, opts.accessToken);
-//    });
-
-
-program
     .command('promote')
     .option("-t, --to <source>","what stage to promote to [staging,production]",/^(staging|production)$/i,"staging")
     //.option("--target <target>","set target [stage,prod]",/^(stage|prod)$/i,"stage")
