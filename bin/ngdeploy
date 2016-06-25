@@ -36,9 +36,17 @@ program
 
 program
     .command('set')
+    .option("-g, --global", "set globally into ~/.ngdeploy", null,0)
     .option("-a, --accessToken <token>","use the access token")
     .action(function(opts){
-        ng.update(opts);
+        ng.setAccessKey(opts.accessToken,opts.global);
+    });
+
+program
+    .command('set')
+    .option("-a, --accessToken <token>","use the access token")
+    .action(function(opts){
+        ng.setAccessKey(opts.accessToken,0);
     });
 
 //program
