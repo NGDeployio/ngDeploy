@@ -11,11 +11,8 @@ program
     .version(pkg.version);
 
 program
-    .option("-t,--test","Test mode that avoids ajax requests.");
-
-program
     .command('init <appName> <dist>')
-    .option("-a, --accessToken <token>","Set the access token")
+    .option("-a, --accountToken <token>","Set the access token")
     .description("Initialize ngdeploy with <appName> and <distribution folder>")
     .action(function(appName,dist,opts){
             ng.init(appName,dist,opts);
@@ -23,40 +20,42 @@ program
 
 program
     .command('create <appName>')
-    .option("-a, --accessToken <token>","use the access token")
+    .option("-a, --accountToken <token>","use the access token")
     .description("Create the app <appName>")
     .action(function(appName,opts){
-        ng.create({ngDeployUrl: appName, name: appName},opts.accessToken);
+        ng.create({ngDeployUrl: appName, name: appName},opts.accountToken);
     });
 
 program
-    .command('upload')
-    .description('upload the distribution folder into the cloud. Take it away!')
-    .action(ng.upload);
+    .command('push')
+    .description('push the distribution folder into the cloud. Take it away!')
+    .action(ng.push);
 
 program
     .command('set')
     .option("-g, --global", "set globally into ~/.ngdeploy", null,0)
-    .option("-a, --accessToken <token>","use the access token")
+    .option("-a, --accountToken <token>","set the account token")
     .action(function(opts){
-        ng.setAccessKey(opts.accessToken,opts.global);
+        ng.setAccountToken(opts.accountToken,opts.global);
     });
 
 program
     .command('promote')
-    .option("-t, --to <source>","what stage to promote to [staging,production]",/^(staging|production)$/i,"staging")
-    //.option("--target <target>","set target [stage,prod]",/^(stage|prod)$/i,"stage")
+    .option("-t, --to <target>","what stage to promote to [staging,production]",/^(staging|production)$/i,"staging")
     .description('Promote an application to staging or production.')
     .action(function(opts){
-        ng.promote(opts["to"]);
+        console.log(opts);
+        if(typeof opts["to"] != "undefined"){
+            ng.promote(opts["to"]);
+        }
     });
 
 program
     .command('list')
-    .option("-a, --accessToken <token>","use the access token")
+    .option("-a, --accountToken <token>","use the account token")
     .description('list all of your apps')
     .action(function(opts){
-        ng.list(opts.accessToken);
+        ng.list(opts.accountToken);
     });
 
 program
@@ -68,8 +67,7 @@ program.on('--help', function(){
     ng.additional_help()
 });
 
-ng.readngdeploy();
 program.parse(process.argv);
 
 if(program.args.length==0)
-        ng.usage();
+    ng.usage();
