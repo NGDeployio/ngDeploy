@@ -28,8 +28,23 @@ program
 
 program
     .command('push')
-    .description('push the distribution folder into the cloud. Take it away!')
+    .description('Push the distribution folder into the cloud. Take it away!')
     .action(ng.push);
+
+program
+    .command('delete <appId>')
+    .option("-a, --accountToken <token>","use the access token")
+    .action(function(id,opts){
+        ng.delete(id, opts.accountToken);
+    });
+
+program
+    .command('setEnv <appId> <stage> <kv>')
+    .option("-a, --accountToken <token>","use the access token")
+    .action(function(appId,stage,kv){
+        console.log(arguments);
+        ng.setEnv(appId,stage,kv);
+    });
 
 program
     .command('set')
@@ -42,9 +57,8 @@ program
 program
     .command('promote')
     .option("-t, --to <target>","what stage to promote to [staging,production]",/^(staging|production)$/i,"staging")
-    .description('Promote an application to staging or production.')
+    .description('Promote an application to staging or production')
     .action(function(opts){
-        console.log(opts);
         if(typeof opts["to"] != "undefined"){
             ng.promote(opts["to"]);
         }
@@ -53,14 +67,14 @@ program
 program
     .command('list')
     .option("-a, --accountToken <token>","use the account token")
-    .description('list all of your apps')
+    .description('List all of your apps')
     .action(function(opts){
         ng.list(opts.accountToken);
     });
 
 program
     .command('clean')
-    .description('remove configuration')
+    .description('remove .ngdeploy configuration')
     .action(ng.clean);
 
 program.on('--help', function(){
