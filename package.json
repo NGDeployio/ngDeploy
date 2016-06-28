@@ -32,7 +32,7 @@
     "node": ">=0.8"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "jscs ./lib/cli.js ./bin/ngdeploy ./test/initialize.js -x; mocha"
   },
   "dependencies": {
     "chalk": "^1.1.1",
