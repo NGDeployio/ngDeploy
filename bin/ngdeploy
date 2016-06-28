@@ -9,12 +9,16 @@ program
     .version(pkg.version);
 
 program
-    .command('init <appName> <dist>')
+    .command('init [appName] [dist]')
     .option('-a, --accountToken <token>', 'Set the access token')
     .description('Initialize ngdeploy with <appName> and <distribution folder>')
     .action(function (appName, dist, opts) {
-            ng.init(appName, dist, opts);
-          });
+        if (appName && dist && opts) {
+          ng.init(appName, dist, opts);
+        }else {
+          ng.initWithPrompt();
+        }
+      });
 
 program
     .command('create <appName>')
