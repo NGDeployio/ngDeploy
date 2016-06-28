@@ -5,8 +5,6 @@ var program = require('commander');
 var ng    = require('../lib/cli');
 var pkg   = require('../package');
 
-const chalk = require('chalk');
-
 program
     .version(pkg.version);
 
@@ -50,7 +48,6 @@ program
     .option('-g, --global', 'set globally into ~/.ngdeploy', null, 0)
     .option('-a, --accountToken <token>', 'set the account token')
     .action(function (opts) {
-        console.log(opts);
         ng.setAccountToken(opts.accountToken, opts.global);
       });
 
