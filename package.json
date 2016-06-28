@@ -45,8 +45,9 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "*",
-    "grunt-strip-code": "^1.0.4"
+    "grunt-strip-code": "^1.0.4",
+    "jshint": "^2.9.2",
+    "mocha": "*"
   },
   "license": "MIT"
 }
