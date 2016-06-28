@@ -1,30 +1,30 @@
 #! /usr/bin/env node
 'use strict';
 
-var program = require('commander')
-    , ng    = require('../lib/cli')
-    , pkg   = require('../package');
+var program = require('commander');
+var ng    = require('../lib/cli');
+var pkg   = require('../package');
 
-const chalk = require("chalk");
+const chalk = require('chalk');
 
 program
     .version(pkg.version);
 
 program
     .command('init <appName> <dist>')
-    .option("-a, --accountToken <token>","Set the access token")
-    .description("Initialize ngdeploy with <appName> and <distribution folder>")
-    .action(function(appName,dist,opts){
-            ng.init(appName,dist,opts);
-    });
+    .option('-a, --accountToken <token>', 'Set the access token')
+    .description('Initialize ngdeploy with <appName> and <distribution folder>')
+    .action(function (appName, dist, opts) {
+            ng.init(appName, dist, opts);
+          });
 
 program
     .command('create <appName>')
-    .option("-a, --accountToken <token>","use the access token")
-    .description("Create the app <appName>")
-    .action(function(appName,opts){
-        ng.create({ngDeployUrl: appName, name: appName},opts.accountToken);
-    });
+    .option('-a, --accountToken <token>', 'use the access token')
+    .description('Create the app <appName>')
+    .action(function (appName, opts) {
+        ng.create({ ngDeployUrl: appName, name: appName }, opts.accountToken);
+      });
 
 program
     .command('push')
@@ -33,55 +33,55 @@ program
 
 program
     .command('delete <appId>')
-    .option("-a, --accountToken <token>","use the access token")
-    .action(function(id,opts){
+    .option('-a, --accountToken <token>', 'use the access token')
+    .action(function (id, opts) {
         ng.delete(id, opts.accountToken);
-    });
+      });
 
 program
     .command('setEnv <appId> <stage> <kv>')
-    .option("-a, --accountToken <token>","use the access token")
-    .action(function(appId,stage,kv){
+    .option('-a, --accountToken <token>', 'use the access token')
+    .action(function (appId, stage, kv) {
         console.log(arguments);
-        ng.setEnv(appId,stage,kv);
-    });
+        ng.setEnv(appId, stage, kv);
+      });
 
 program
     .command('set')
-    .option("-g, --global", "set globally into ~/.ngdeploy", null,0)
-    .option("-a, --accountToken <token>","set the account token")
-    .action(function(opts){
-        ng.setAccountToken(opts.accountToken,opts.global);
-    });
+    .option('-g, --global', 'set globally into ~/.ngdeploy', null, 0)
+    .option('-a, --accountToken <token>', 'set the account token')
+    .action(function (opts) {
+        ng.setAccountToken(opts.accountToken, opts.global);
+      });
 
 program
     .command('promote')
-    .option("-t, --to <target>","what stage to promote to [staging,production]",/^(staging|production)$/i,"staging")
+    .option('-t, --to <target>', '[staging,production]', /^(staging|production)$/i, 'staging')
     .description('Promote an application to staging or production')
-    .action(function(opts){
-        if(typeof opts["to"] != "undefined"){
-            ng.promote(opts["to"]);
+    .action(function (opts) {
+        if (typeof opts.to != 'undefined') {
+          ng.promote(opts.to);
         }
-    });
+      });
 
 program
     .command('list')
-    .option("-a, --accountToken <token>","use the account token")
+    .option('-a, --accountToken <token>', 'use the account token')
     .description('List all of your apps')
-    .action(function(opts){
+    .action(function (opts) {
         ng.list(opts.accountToken);
-    });
+      });
 
 program
     .command('clean')
     .description('remove .ngdeploy configuration')
     .action(ng.clean);
 
-program.on('--help', function(){
-    ng.additionalHelp()
-});
+program.on('--help', function () {
+    ng.additionalHelp();
+  });
 
 program.parse(process.argv);
 
-if(program.args.length==0)
+if (program.args.length == 0)
     ng.usage();
