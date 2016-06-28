@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "0.10"
+branches:
+  only:
+    - master
+before_script:
+  - npm install -g karma
+  - npm install -g jscs
+  - npm install
+
+script:
+  - jscs ./lib/cli.js
+  - jscs ./bin/ngdeploy
+  - npm test
