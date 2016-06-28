@@ -1,8 +1,8 @@
 {
   "name": "ngdeploy",
-  "description": "Generate a command line application for node.js.",
+  "description": "Deploying SPA's and Static pages into the cloud.",
   "version": "0.1.8",
-  "homepage": "https://github.com/mbejda/ngdeploy",
+  "homepage": "https://github.com/NGDeployio/ngdeploy",
   "author": "Milos Bejda (https://github.com/mbejda)",
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
   "bin": {
     "ngdeploy": "./bin/ngdeploy"
   },
-  "main": "./bin/ngdeplog",
+  "main": "./bin/ngdeploy",
   "engines": {
     "node": ">=0.8"
   },
@@ -45,7 +45,8 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "mocha": "*",
     "grunt-strip-code": "^1.0.4"
   },
-  "license": "ISC"
+  "license": "MIT"
 }
