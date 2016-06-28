@@ -42,7 +42,6 @@ program
     .command('setEnv <appId> <stage> <kv>')
     .option('-a, --accountToken <token>', 'use the access token')
     .action(function (appId, stage, kv) {
-        console.log(arguments);
         ng.setEnv(appId, stage, kv);
       });
 
