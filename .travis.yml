@@ -5,7 +5,7 @@ branches:
   only:
     - master
 before_script:
-  - npm install -g karma
+  - npm install -g mocha
   - npm install -g jscs
   - npm install
 
