@@ -78,7 +78,7 @@ program
     .action(ng.clean);
 
 program.on('--help', function(){
-    ng.additional_help()
+    ng.additionalHelp()
 });
 
 program.parse(process.argv);

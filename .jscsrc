@@ -1,0 +1,5 @@
+{
+  "preset": "airbnb",
+  "requireCurlyBraces": null, // or false
+  "maxErrors":60
+}
