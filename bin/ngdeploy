@@ -50,6 +50,7 @@ program
     .option('-g, --global', 'set globally into ~/.ngdeploy', null, 0)
     .option('-a, --accountToken <token>', 'set the account token')
     .action(function (opts) {
+        console.log(opts);
         ng.setAccountToken(opts.accountToken, opts.global);
       });
 
