@@ -3,7 +3,6 @@ var fs = require('fs');
 var chai = require('chai');
 
 var assert = chai.assert;
-var should = chai.should();
 
 var test = {
     name: 'testapp',
@@ -15,12 +14,16 @@ var test = {
     accountToken: '123123123',
     id: 11, };
 
+function clearConfig(){
+    if (fs.existsSync('.ngdeploy')) {
+        fs.unlinkSync('.ngdeploy');
+    }
+}
+
 describe('ngdeploy', function () {
         describe('.init()', function () {
             before(function () {
-                if (fs.existsSync('.ngdeploy')) {
-                  fs.unlinkSync('.ngdeploy');
-                }
+                clearConfig();
               });
 
             it('should not create an empty .ngdeploy file', function () {
@@ -31,12 +34,8 @@ describe('ngdeploy', function () {
 
         describe('.init(appname,./dist)', function () {
             before(function () {
-                if (fs.existsSync('.ngdeploy')) {
-                  fs.unlinkSync('.ngdeploy');
-                }
-
-                console.log('before');
-              });
+                clearConfig();
+             });
 
             it('should create an .ngdeploy file', function () {
 
@@ -51,9 +50,7 @@ describe('ngdeploy', function () {
               });
 
             after(function () {
-                if (fs.existsSync('.ngdeploy')) {
-                  fs.unlinkSync('.ngdeploy');
-                }
+                clearConfig();
               });
           });
 
