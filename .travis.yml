@@ -6,10 +6,9 @@ branches:
     - master
 before_script:
   - npm install -g mocha
-  - npm install -g jscs
+  - npm install -g jshint
   - npm install
 
 script:
-  - jscs ./lib/cli.js
-  - jscs ./bin/ngdeploy
+  - jshint ./lib/cli.js ./bin/ngdeploy ./test/*.js
   - npm test
