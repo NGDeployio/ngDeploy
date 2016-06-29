@@ -60,9 +60,7 @@ program
     .option('-t, --to <target>', '[staging,production]', /^(staging|production)$/i, 'staging')
     .description('Promote an application to staging or production')
     .action(function (opts) {
-        if ( opts.to === undefined) {
           ng.promote(opts.to);
-        }
       });
 
 program
