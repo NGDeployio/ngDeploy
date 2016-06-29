@@ -61,7 +61,7 @@ program
     .description('Promote an application to staging or production')
     .action(function (opts) {
           ng.promote(opts.to);
-      });
+        });
 
 program
     .command('list')
@@ -82,6 +82,6 @@ program.on('--help', function () {
 
 program.parse(process.argv);
 
-if (program.args.length === 0){
-    ng.usage();
+if (program.args.length === 0) {
+  ng.usage();
 }
