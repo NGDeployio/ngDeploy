@@ -47,7 +47,7 @@
     "chai": "^3.5.0",
     "grunt-strip-code": "^1.0.4",
     "jshint": "^2.9.2",
-    "mocha": "*"
+    "mocha": "2.5.3"
   },
   "license": "MIT"
 }
