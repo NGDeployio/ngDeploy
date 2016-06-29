@@ -32,7 +32,8 @@
     "node": ">=0.8"
   },
   "scripts": {
-    "test": "jshint ./lib/cli.js ./bin/ngdeploy ./test/initialize.js -x; mocha"
+    "test": "jshint ./lib/cli.js ./bin/ngdeploy ./test/initialize.js -x; mocha",
+    "changelog":"github_changelog_generator"
   },
   "dependencies": {
     "chalk": "^1.1.1",
