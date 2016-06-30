@@ -7,7 +7,7 @@ Install this globally and you'll have access to the `ngdeploy` command anywhere 
 ```shell
 [sudo] npm install -g ngdeploy
 ```
-
+**Note:** The job of the NGDeploy CLI is to upload and build single page applications. It's preferred to install globally, but local installations will work too. [please read this](http://nodejs.org/en/blog/npm/npm-1-0-global-vs-local-installation).
 
 ## Usage
 ```shell
@@ -22,6 +22,3 @@ Example:
 3.    $ ngdeploy init helloApp ./dist
 4.    $ ngdeploy push
 ``
-
-**Note:** The job of the NGDeploy CLI is to upload and build single page applications. It's preferred to install globally, but local installations will work too. [please read this](http://nodejs.org/en/blog/npm/npm-1-0-global-vs-local-installation).
-
