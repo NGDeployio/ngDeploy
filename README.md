@@ -27,45 +27,63 @@ Example:
 
 ### Install NGDeploy
 
+**Example**
 ```shell
 npm install -g ngdeploy 
 ```
 
 ### Login
-[Generate an account token here.](http://ngdeploy.com/registerUser) We'll set the account token globally using the following command. 
+[Generate an account token here.](http://ngdeploy.com/registerUser) We'll set the account token globally using the following command.
+**Format**
+> ngdeploy login
+
+**Example**
 ```shell
 ngdeploy login 
 $ prompt: Open this link in a browser to register: https://ngdeploy.com/express
 $ prompt: Account Token to use, by default global ~/.ngdeploy:  **************
 ```
 
-### Createsnowhaw
-Creating your first application is as easy as:  
+### Create
+Creating your first application is as easy as:
+
+**Format**  
+> ngdeploy create \<Application Name> 
+
+**Example**  
 ```shell
 ngdeploy create HelloWorld
 ```
 > Please note application names must be unique.
 
 ### Initialize
-Now we can initialize the .ngdeploy configuration file using: 
+Now we can initialize the .ngdeploy configuration file using:
+**Format**
+> ngdeploy init \<Application Name> \<Distribution directory>
+
+**Example**
 ```shell
 ngdeploy init HelloWorld .  
 ```
 
 ### Push
-```shell
+> ngdeploy push
 
+**Example**  
+```shell
+ngdeploy push
 ```
 
 ### Environment
 Environmental variables can be injected into a SPA using the setEnv command. Upon a 
 user request this embeds a javascript file with the given environmental variables. 
 
-```shell
-Format: 
-$ ngdeploy setEnv <appId> <stage> <key:val>
+**Format** 
+> ngdeploy setEnv \<Application Id> \<Stage> \<key:val>
 
-$ ngdeploy setEnv 1 production key:val
+**Example**
+```shell
+ngdeploy setEnv 1 production key:val
 ```
 
 ## 
