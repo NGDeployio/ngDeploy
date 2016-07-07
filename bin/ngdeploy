@@ -69,16 +69,24 @@ program
     .description('List all of your apps')
     .action(function (opts) {
         ng.list(opts.accountToken);
-      });
+    });
 
 program
     .command('clean')
+    .option('-g, --global','remove global configuration at ~/.ngdeploy')
+    .option('-l, --local','remove local configuration at ./')
     .description('remove .ngdeploy configuration')
     .action(ng.clean);
 
+
+program
+    .command("login")
+    .option('-g, --global','globally login')
+    .action(ng.login);
+
 program.on('--help', function () {
-    ng.additionalHelp();
-  });
+         ng.additionalHelp();
+    });
 
 program.parse(process.argv);
 
