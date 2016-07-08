@@ -85,5 +85,3 @@ user request this embeds a javascript file with the given environmental variable
 ```shell
 ngdeploy setEnv 1 production key:val
 ```
-
-## 
