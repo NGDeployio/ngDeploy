@@ -10,15 +10,15 @@ program
 
 program
     .command('init [appName] [dist]')
-    .option('-a, --accountToken <token>', 'Set the access token')
     .description('Initialize ngdeploy with <appName> and <distribution folder>')
+    .option('-a, --accountToken <token>', 'Set the access token')
     .action(function (appName, dist, opts) {
         if (appName && dist && opts) {
           ng.init(appName, dist, opts);
         }else {
           ng.initWithPrompt();
         }
-      });
+     });
 
 program
     .command('create <appName>')
