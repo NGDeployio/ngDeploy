@@ -25,14 +25,14 @@ Example:
 ```
 ## First steps
 
-### Install NGDeploy
+### 1. Install NGDeploy
 
 **Example**
 ```shell
 npm install -g ngdeploy 
 ```
 
-### Login
+### 2. Login
 [Generate an account token here.](http://ngdeploy.com/registerUser) We'll set the account token globally using the following command.
 **Format**
 > ngdeploy login
@@ -44,7 +44,7 @@ $ prompt: Open this link in a browser to register: https://ngdeploy.com/express
 $ prompt: Account Token to use, by default global ~/.ngdeploy:  **************
 ```
 
-### Create
+### 3. Create
 Creating your first application is as easy as:
 
 **Format**  
@@ -56,7 +56,7 @@ ngdeploy create HelloWorld
 ```
 > Please note application names must be unique.
 
-### Initialize
+### 4. Initialize
 Now we can initialize the .ngdeploy configuration file using:
 **Format**
 > ngdeploy init \<Application Name> \<Distribution directory>
@@ -66,7 +66,7 @@ Now we can initialize the .ngdeploy configuration file using:
 ngdeploy init HelloWorld .  
 ```
 
-### Push
+### 5. Push
 > ngdeploy push
 
 **Example**  

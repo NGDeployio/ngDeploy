@@ -2,9 +2,22 @@
 
 ## [Unreleased](https://github.com/NGDeployio/ngDeploy/tree/HEAD)
 
+[Full Changelog](https://github.com/NGDeployio/ngDeploy/compare/0.2.5...HEAD)
+
+**Implemented enhancements:**
+
+- GitHook: Need to register hook id and repoId to avoid duplicate hooks.  [\#11](https://github.com/NGDeployio/ngDeploy/issues/11)
+- Payment processing  [\#10](https://github.com/NGDeployio/ngDeploy/issues/10)
+- Simple website builder  [\#9](https://github.com/NGDeployio/ngDeploy/issues/9)
+- Lambda: S3 copy over dev/prod buckets [\#8](https://github.com/NGDeployio/ngDeploy/issues/8)
+- Github Integration / Sync with a static website repo [\#5](https://github.com/NGDeployio/ngDeploy/issues/5)
+
+## [0.2.5](https://github.com/NGDeployio/ngDeploy/tree/0.2.5) (2016-07-08)
 **Implemented enhancements:**
 
 - CLI Authentication: Access key  [\#1](https://github.com/NGDeployio/ngDeploy/issues/1)
+- Fixed up documentation and tests [\#14](https://github.com/NGDeployio/ngDeploy/pull/14) ([marek5050](https://github.com/marek5050))
+- Updating TravisCI [\#13](https://github.com/NGDeployio/ngDeploy/pull/13) ([marek5050](https://github.com/marek5050))
 
 **Closed issues:**
 
@@ -13,6 +26,8 @@
 
 **Merged pull requests:**
 
+- Merged the master push [\#17](https://github.com/NGDeployio/ngDeploy/pull/17) ([marek5050](https://github.com/marek5050))
+- Merger [\#16](https://github.com/NGDeployio/ngDeploy/pull/16) ([marek5050](https://github.com/marek5050))
 - Refactored [\#3](https://github.com/NGDeployio/ngDeploy/pull/3) ([marek5050](https://github.com/marek5050))
 
 
