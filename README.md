@@ -7,7 +7,9 @@ Install this globally and you'll have access to the `ngdeploy` command anywhere 
 ```shell
 [sudo] npm install -g ngdeploy
 ```
-**Note:** The job of the NGDeploy CLI is to push and build single page applications. It's preferred to install globally, but local installations will work too. [please read this](http://nodejs.org/en/blog/npm/npm-1-0-global-vs-local-installation).
+
+**Note:**
+The job of the NGDeploy CLI is to push and manage single page applications. It's preferred to install globally, but local installations will work too. [please read this](http://nodejs.org/en/blog/npm/npm-1-0-global-vs-local-installation).
 
 ## Usage
 ```shell
@@ -25,15 +27,16 @@ Example:
 
 ## First steps
 
-### Install NGDeploy
+### 1. Install NGDeploy
 
 **Example**
 ```shell
 npm install -g ngdeploy 
 ```
 
-### Login
+### 2. Login
 [Generate an account token here.](http://ngdeploy.com/registerUser) We'll set the account token globally using the following command.
+
 **Format**
 > ngdeploy login
 
@@ -44,7 +47,7 @@ $ prompt: Open this link in a browser to register: https://ngdeploy.com/express
 $ prompt: Account Token to use, by default global ~/.ngdeploy:  **************
 ```
 
-### Create
+### 3. Create
 Creating your first application is as easy as:
 
 **Format**  
@@ -56,8 +59,9 @@ ngdeploy create HelloWorld
 ```
 > Please note application names must be unique.
 
-### Initialize
+### 4. Initialize
 Now we can initialize the .ngdeploy configuration file using:
+
 **Format**
 > ngdeploy init \<Application Name> \<Distribution directory>
 
@@ -66,13 +70,15 @@ Now we can initialize the .ngdeploy configuration file using:
 ngdeploy init HelloWorld .  
 ```
 
-### Push
+### 5. Push
 > ngdeploy push
 
 **Example**  
 ```shell
 ngdeploy push
 ```
+
+## Advanced
 
 ### Environment
 Environmental variables can be injected into a SPA using the setEnv command. Upon a 
