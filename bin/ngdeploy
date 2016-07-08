@@ -11,7 +11,7 @@ program
 program
     .command('init [appName] [dist]')
     .description('Initialize ngdeploy with <appName> and <distribution folder>')
-    .option('-a, --accountToken <token>', 'Set the access token')
+    .option('-a, --accountToken <token>', 'use the access token',null,null)
     .action(function (appName, dist, opts) {
         if (appName && dist && opts) {
           ng.init(appName, dist, opts);
@@ -22,7 +22,7 @@ program
 
 program
     .command('create <appName>')
-    .option('-a, --accountToken <token>', 'use the access token')
+    .option('-a, --accountToken <token>', 'use the access token',null,null)
     .description('Create the app <appName>')
     .action(function (appName, opts) {
         ng.create({ ngDeployUrl: appName, name: appName }, opts.accountToken);
@@ -35,14 +35,14 @@ program
 
 program
     .command('delete <appId>')
-    .option('-a, --accountToken <token>', 'use the access token')
+    .option('-a, --accountToken <token>', 'use the access token',null,null)
     .action(function (id, opts) {
         ng.delete(id, opts.accountToken);
       });
 
 program
     .command('setEnv <appId> <stage> <kv>')
-    .option('-a, --accountToken <token>', 'use the access token')
+    .option('-a, --accountToken <token>', 'use the access token',null,null)
     .action(function (appId, stage, kv) {
         ng.setEnv(appId, stage, kv);
       });
@@ -50,7 +50,7 @@ program
 program
     .command('set')
     .option('-g, --global', 'set globally into ~/.ngdeploy', null, 0)
-    .option('-a, --accountToken <token>', 'set the account token')
+    .option('-a, --accountToken <token>', 'use the access token',null,null)
     .action(function (opts) {
         ng.setAccountToken(opts.accountToken, opts.global);
       });
@@ -65,7 +65,7 @@ program
 
 program
     .command('list')
-    .option('-a, --accountToken <token>', 'use the account token')
+    .option('-a, --accountToken <token>', 'use the access token',null,null)
     .description('List all of your apps')
     .action(function (opts) {
         ng.list(opts.accountToken);
