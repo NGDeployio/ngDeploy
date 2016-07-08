@@ -33,14 +33,14 @@ npm install -g ngdeploy
 ```
 
 ### 2. Login
-[Generate an account token here.](http://ngdeploy.com/registerUser) We'll set the account token globally using the following command.
+[Generate an account token here.](https://ngdeploy.com/?redirectTo=private.accounts) We'll set the account token globally using the following command.
 **Format**
 > ngdeploy login
 
 **Example**
 ```shell
 ngdeploy login 
-$ prompt: Open this link in a browser to register: https://ngdeploy.com/express
+$ prompt: Open this link in a browser to register: https://ngdeploy.com/?redirectTo=private.accounts
 $ prompt: Account Token to use, by default global ~/.ngdeploy:  **************
 ```
 
