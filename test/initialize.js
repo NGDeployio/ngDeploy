@@ -1,18 +1,8 @@
 var ngdeploy = require('../lib/cli.js');
 var fs = require('fs');
 var chai = require('chai');
-
+var test = require('./fixtures/ngdeploy.json');
 var assert = chai.assert;
-
-var test = {
-    name: 'testapp',
-    version: '0.1.1',
-    dist: './dist',
-    ngDeployUrl: 'testapp',
-    path: '',
-    endpoint: 'https://api.ngdeploy.com',
-    accountToken: '123123123',
-    id: 11, };
 
 function clearConfig(){
     if (fs.existsSync('.ngdeploy')) {
@@ -26,13 +16,13 @@ describe('ngdeploy', function () {
                 clearConfig();
             });
             it('sets the global access key', function(){
-                ngdeploy.login({global:1});
+                ngdeploy.login({global:1, test:1, accountToken:"global token"});
                 ngdeploy.readngdeploy();
                 assert.equal(ngdeploy.get("accountToken"), "global token");
             });
 
             it('sets the local access key', function(){
-                ngdeploy.login({local:1});
+                ngdeploy.login({local:1, test:1, accountToken:"local token"});
                 ngdeploy.readngdeploy();
                 assert.equal(ngdeploy.get("accountToken"), "local token");
             });
