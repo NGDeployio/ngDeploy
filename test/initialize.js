@@ -1,8 +1,14 @@
 var ngdeploy = require('../lib/cli.js');
 var fs = require('fs');
 var chai = require('chai');
+chai.use(require('chai-as-promised'));
+
 var test = require('./fixtures/ngdeploy.json');
 var assert = chai.assert;
+var sinon = require('sinon');
+var helpers = require('./helpers');
+var api = require('../lib/cli');
+var expect = chai.expect;
 
 function clearConfig(){
     if (fs.existsSync('.ngdeploy')) {
@@ -11,6 +17,36 @@ function clearConfig(){
 }
 
 describe('ngdeploy', function () {
+    var sandbox;
+    var mockApi;
+
+    beforeEach(function(){
+        sandbox = sinon.sandbox.create();
+        helpers.mockAuth(sandbox);
+        mockApi = sandbox.mock(api);
+    });
+
+    afterEach(function() {
+        sandbox.restore();
+    });
+
+    describe('.addDomain()', function(){
+        before(function(){
+            clearConfig();
+            ngdeploy.login({global:1, test:1, accountToken:"global token"});
+        });
+
+        context('requires an domain, id, and access token', function(){
+            it('succeeds with all', function(){
+                return expect(function(){ngdeploy.addDoman({id:1, domain:'http://google.com'});}).to.not.throw(Error);
+            });
+
+            it('fails otherwise', function(){
+                return expect(function(){ngdeploy.addDoman({domain:'http://google.com'});}).to.throw(Error);
+            });
+        });
+    });
+
           describe('.login()', function(){
             before(function(){
                 clearConfig();
