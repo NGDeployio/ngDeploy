@@ -4,6 +4,7 @@
 *.diff
 *.err
 *.gz
+logs
 *.log
 *.orig
 *.out

@@ -2,6 +2,7 @@ var ngdeploy = require('../lib/cli.js');
 var fs = require('fs');
 var chai = require('chai');
 chai.use(require('chai-as-promised'));
+var winston = require('winston');
 
 var test = require('./fixtures/ngdeploy.json');
 var assert = chai.assert;
@@ -20,10 +21,13 @@ describe('ngdeploy', function () {
     var sandbox;
     var mockApi;
 
+
     beforeEach(function(){
         sandbox = sinon.sandbox.create();
         helpers.mockAuth(sandbox);
         mockApi = sandbox.mock(api);
+
+        api.logger.configure({'level':'error'});
     });
 
     afterEach(function() {
@@ -38,11 +42,11 @@ describe('ngdeploy', function () {
 
         context('requires an domain, id, and access token', function(){
             it('succeeds with all', function(){
-                return expect(function(){ngdeploy.addDoman({id:1, domain:'http://google.com'});}).to.not.throw(Error);
+                return expect(ngdeploy.addDoman({id:1, domain:'http://google.com'})).to.not.be.an("error");
             });
 
             it('fails otherwise', function(){
-                return expect(function(){ngdeploy.addDoman({domain:'http://google.com'});}).to.throw(Error);
+                return expect(ngdeploy.addDoman({domain:'http://google.com'})).to.be.an('error');
             });
         });
     });
@@ -51,6 +55,7 @@ describe('ngdeploy', function () {
             before(function(){
                 clearConfig();
             });
+
             it('sets the global access key', function(){
                 ngdeploy.login({global:1, test:1, accountToken:"global token"});
                 ngdeploy.readngdeploy();
@@ -64,6 +69,7 @@ describe('ngdeploy', function () {
             });
 
           });
+
          describe('.init()', function () {
             before(function () {
                 clearConfig();
