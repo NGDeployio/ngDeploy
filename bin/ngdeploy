@@ -4,18 +4,19 @@
 var program = require('commander');
 var ng    = require('../lib/cli');
 var pkg   = require('../package');
+var domain = require('../lib/domain');
 
 program
     .version(pkg.version);
 
 program
-    .command('init [appName] [dist]')
+    .command('init <appName> [dist]')
     .description('Initialize ngdeploy with <appName> and <distribution folder>')
     .option('-a, --accountToken <token>', 'use the access token',null,null)
     .action(function (appName, dist, opts) {
         if (appName && dist && opts) {
           ng.init(appName, dist, opts);
-        }else {
+        } else {
           ng.initWithPrompt();
         }
      });
@@ -38,7 +39,18 @@ program
     .option('-a, --accountToken <token>', 'use the access token',null,null)
     .action(function (id, opts) {
         ng.delete(id, opts.accountToken);
-      });
+    });
+
+
+program
+    .command('domain <add> <appId> <domainUrl>')
+    .option('-a, --accountToken <token>', 'use the access token',null,null)
+    .action(function (action,id, domainUrl, opts) {
+        //ng.delete(id,domainUrl, opts.accountToken);
+        //console.log(action, id,domainUrl, opts.accountToken);
+        domain.perform(action,id,domainUrl,opts.accountToken);
+    });
+
 
 program
     .command('setEnv <appId> <stage> <kv>')
