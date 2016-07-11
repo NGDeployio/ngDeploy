@@ -8,6 +8,7 @@ var assert = chai.assert;
 var sinon = require('sinon');
 var helpers = require('./helpers');
 var api = require('../lib/cli');
+var utils = require('../lib/utils');
 var expect = chai.expect;
 
 function clearConfig(){
@@ -137,7 +138,7 @@ describe('ngdeploy', function () {
                 ngdeploy.setAccountToken("global account",1);
                 ngdeploy.clean({local:1, global:1});
                 assert.equal(fs.existsSync('.ngdeploy'), false);
-                assert.equal(fs.existsSync( ngdeploy.getUserHome() + '/.ngdeploy'), false);
+                assert.equal(fs.existsSync( utils.getUserHome() + '/.ngdeploy'), false);
             });
           });
 
