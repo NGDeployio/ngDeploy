@@ -2,7 +2,6 @@ var ngdeploy = require('../lib/cli.js');
 var fs = require('fs');
 var chai = require('chai');
 chai.use(require('chai-as-promised'));
-var winston = require('winston');
 
 var test = require('./fixtures/ngdeploy.json');
 var assert = chai.assert;
@@ -20,7 +19,6 @@ function clearConfig(){
 describe('ngdeploy', function () {
     var sandbox;
     var mockApi;
-
 
     beforeEach(function(){
         sandbox = sinon.sandbox.create();
