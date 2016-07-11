@@ -1,7 +1,7 @@
 {
   "name": "ngdeploy",
   "description": "Deploying SPA's and Static pages into the cloud.",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "homepage": "https://github.com/NGDeployio/ngdeploy",
   "author": "Milos Bejda (https://github.com/mbejda)",
   "repository": {
@@ -32,7 +32,7 @@
     "node": ">=0.8"
   },
   "scripts": {
-    "test": "jshint ./lib/cli.js ./bin/ngdeploy ./test/initialize.js; mocha",
+    "test": "jshint ./lib/*.js ./bin/ngdeploy ./test/initialize.js; mocha",
     "changelog": "github_changelog_generator"
   },
   "dependencies": {
@@ -48,9 +48,12 @@
   "devDependencies": {
     "bithound": "^1.3.0",
     "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
     "grunt-strip-code": "^1.0.4",
     "jshint": "^2.9.2",
-    "mocha": "2.5.3"
+    "mocha": "2.5.3",
+    "sinon": "^1.17.4",
+    "sinon-as-promised": "^3.0.1"
   },
   "license": "MIT"
 }

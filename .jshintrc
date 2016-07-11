@@ -17,6 +17,9 @@
     "before": false,
     "after": true,
     "describe": true,
-    "it": true
+    "it": true,
+    "afterEach": true,
+    "beforeEach":true,
+    "context": true
   }
 }
