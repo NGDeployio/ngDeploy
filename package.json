@@ -1,20 +1,20 @@
 {
   "name": "ngdeploy",
   "description": "Deploying SPA's and Static pages into the cloud.",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "homepage": "https://github.com/NGDeployio/ngdeploy",
   "author": "Milos Bejda (https://github.com/mbejda)",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mbejda/ngdeploy.git"
+    "url": "git://github.com/ngdeployio/ngdeploy.git"
   },
   "bugs": {
-    "url": "https://github.com/mbejda/ngdeploy/issues"
+    "url": "https://github.com/ngdeployio/ngdeploy/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/mbejda/ngdeploy/blob/master/LICENSE-MIT"
+      "url": "https://github.com/ngdeployio/ngdeploy/blob/master/LICENSE-MIT"
     }
   ],
   "keywords": [
