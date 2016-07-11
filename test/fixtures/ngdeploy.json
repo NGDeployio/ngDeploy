@@ -5,6 +5,5 @@
  "ngDeployUrl": "testapp",
  "path": "",
  "endpoint": "https://api.ngdeploy.com",
- "accountToken": "123123123",
  "id": 11
 }

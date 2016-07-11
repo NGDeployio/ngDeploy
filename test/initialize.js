@@ -9,13 +9,14 @@ var sinon = require('sinon');
 var helpers = require('./helpers');
 var api = require('../lib/cli');
 var utils = require('../lib/utils');
+var domains = require('../lib/domain');
 var expect = chai.expect;
 
 function clearConfig(){
-    if (fs.existsSync('.ngdeploy')) {
-        fs.unlinkSync('.ngdeploy');
-    }
+    ngdeploy.clean({local:1,global:1});
 }
+
+var debug = false;
 
 describe('ngdeploy', function () {
     var sandbox;
@@ -26,11 +27,14 @@ describe('ngdeploy', function () {
         helpers.mockAuth(sandbox);
         mockApi = sandbox.mock(api);
 
-        api.logger.configure({'level':'error'});
+        if( !debug) {
+            api.logger.configure({'level':'error'});
+        }
     });
 
     afterEach(function() {
         sandbox.restore();
+        ngdeploy.set("accountToken", null);
     });
 
     describe('.addDomain()', function(){
@@ -41,11 +45,11 @@ describe('ngdeploy', function () {
 
         context('requires an domain, id, and access token', function(){
             it('succeeds with all', function(){
-                return expect(ngdeploy.addDoman({id:1, domain:'http://google.com'})).to.not.be.an("error");
+                return expect(domains.add(1, 'http://google.com')).to.not.be.an("error");
             });
 
             it('fails otherwise', function(){
-                return expect(ngdeploy.addDoman({domain:'http://google.com'})).to.be.an('error');
+                return expect(domains.add(null,'http://google.com')).to.be.an('error');
             });
         });
     });
@@ -146,6 +150,7 @@ describe('ngdeploy', function () {
     describe('init with local and global accessToken', function () {
         before(function () {
             try{
+                clearConfig();
             }catch(e){}
         });
 
@@ -153,7 +158,7 @@ describe('ngdeploy', function () {
             ngdeploy.createConfiguration(test);
             ngdeploy.setAccountToken("global token", 1);
             ngdeploy.readngdeploy();
-            assert.equal(ngdeploy.get("accountToken"), "global token");
+            assert.equal(ngdeploy.get('accountToken'), "global token");
         });
 
         it('should use the local if both present', function () {
@@ -170,4 +175,37 @@ describe('ngdeploy', function () {
 
     });
 
+    describe("end to end test", function(){
+        it("should log the user in", function(){
+
+        });
+
+        it("should create an application", function(){
+
+        });
+
+        it("should initialize the test application", function(){
+
+        });
+
+        it("should push it to development", function(){
+
+        });
+
+        it("should promote to staging", function(){
+
+        });
+
+        it("should promote to development", function(){
+
+        });
+
+        it("should add a domain", function(){
+
+        });
+
+        it("should promote to development", function(){
+
+        });
+    });
 });
