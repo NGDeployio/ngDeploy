@@ -32,7 +32,7 @@
     "node": ">=0.8"
   },
   "scripts": {
-    "test": "jshint ./lib/cli.js ./bin/ngdeploy ./test/initialize.js; mocha",
+    "test": "jshint ./lib/*.js ./bin/ngdeploy ./test/initialize.js; mocha",
     "changelog": "github_changelog_generator"
   },
   "dependencies": {
