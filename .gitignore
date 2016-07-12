@@ -1,6 +1,7 @@
 # Numerous always-ignore extensions
 *.csv
 *.dat
+.ngdeploy
 *.diff
 *.err
 *.gz

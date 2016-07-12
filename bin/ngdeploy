@@ -94,7 +94,14 @@ program
 program
     .command("login")
     .option('-g, --global','globally login')
+    .option('-a, --accountToken <token>','specify account token')
     .action(ng.login);
+
+program
+    .command("logout")
+    .option('-g, --global','globally logout')
+    .action(ng.logout);
+
 
 program.on('--help', function () {
          ng.additionalHelp();

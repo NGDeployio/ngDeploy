@@ -13,38 +13,32 @@ Install this globally and you'll have access to the `ngdeploy` command anywhere 
 ## Usage
 ```shell
 $ ngdeploy --help
-1.    $ ngdeploy set -g -a <AccountToken>
+1.    $ ngdeploy login
 2.    $ ngdeploy create <appName>
 3.    $ ngdeploy init <appName> <distDir>
 4.    $ ngdeploy push
 Example: 
-1.    $ ngdeploy set -g -a 123456789
+1.    $ ngdeploy login
 2.    $ ngdeploy create helloApp
 3.    $ ngdeploy init helloApp ./dist
 4.    $ ngdeploy push
 ```
 ## First steps
 
-### 1. Install NGDeploy
+### 1. Login
+[Generate an account token here](https://ngdeploy.com/#!/?redirectTo=private.accounts) and then we can set the account token globally using the following command.
 
-**Example**
-```shell
-npm install -g ngdeploy 
-```
-
-### 2. Login
-[Generate an account token here.](https://ngdeploy.com/#!/?redirectTo=private.accounts) We'll set the account token globally using the following command.
 **Format**
-> ngdeploy login
+> ngdeploy login -g
 
 **Example**
 ```shell
-ngdeploy login 
+$ ngdeploy login 
 $ prompt: Open this link in a browser to register: https://ngdeploy.com/#!/?redirectTo=private.accounts
 $ prompt: Account Token to use, by default global ~/.ngdeploy:  **************
 ```
 
-### 3. Create
+### 2. Create
 Creating your first application is as easy as:
 
 **Format**  
@@ -52,12 +46,13 @@ Creating your first application is as easy as:
 
 **Example**  
 ```shell
-ngdeploy create HelloWorld
+$ ngdeploy create HelloWorld
 ```
 > Please note application names must be unique.
 
-### 4. Initialize
+### 3. Initialize
 Now we can initialize the .ngdeploy configuration file using:
+
 **Format**
 > ngdeploy init \<Application Name> \<Distribution directory>
 
@@ -66,13 +61,15 @@ Now we can initialize the .ngdeploy configuration file using:
 ngdeploy init HelloWorld .  
 ```
 
-### 5. Push
+### 4. Push
 > ngdeploy push
 
 **Example**  
 ```shell
 ngdeploy push
 ```
+
+## Other
 
 ### Environment
 Environmental variables can be injected into a SPA using the setEnv command. Upon a 

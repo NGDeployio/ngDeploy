@@ -10,7 +10,18 @@
 - Payment processing  [\#10](https://github.com/NGDeployio/ngDeploy/issues/10)
 - Simple website builder  [\#9](https://github.com/NGDeployio/ngDeploy/issues/9)
 - Lambda: S3 copy over dev/prod buckets [\#8](https://github.com/NGDeployio/ngDeploy/issues/8)
+- Lambda: Github to S3 Sync using AWS Lambda [\#7](https://github.com/NGDeployio/ngDeploy/issues/7)
 - Github Integration / Sync with a static website repo [\#5](https://github.com/NGDeployio/ngDeploy/issues/5)
+- Attach domains and logging configuration.  [\#20](https://github.com/NGDeployio/ngDeploy/pull/20) ([marek5050](https://github.com/marek5050))
+- Merging additional documentation [\#18](https://github.com/NGDeployio/ngDeploy/pull/18) ([marek5050](https://github.com/marek5050))
+
+**Fixed bugs:**
+
+- Removed unnecessary logging file.  [\#21](https://github.com/NGDeployio/ngDeploy/pull/21) ([marek5050](https://github.com/marek5050))
+
+**Merged pull requests:**
+
+- Dev [\#19](https://github.com/NGDeployio/ngDeploy/pull/19) ([mbejda](https://github.com/mbejda))
 
 ## [0.2.5](https://github.com/NGDeployio/ngDeploy/tree/0.2.5) (2016-07-08)
 **Implemented enhancements:**
