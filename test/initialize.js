@@ -182,7 +182,6 @@ describe('ngdeploy', function () {
             //ngdeploy.init(test);
         });
 
-<<<<<<< HEAD
         it("push it to development", function(){
             //ngdeploy.push();
         });
@@ -197,39 +196,6 @@ describe('ngdeploy', function () {
 
         it("add a domain", function(){
             //domains.add('http://ngdeploy.org');
-=======
-    describe("end to end test", function(){
-        it("should log the user in", function(){
-
-        });
-
-        it("should create an application", function(){
-
-        });
-
-        it("should initialize the test application", function(){
-
-        });
-
-        it("should push it to development", function(){
-
-        });
-
-        it("should promote to staging", function(){
-
-        });
-
-        it("should promote to development", function(){
-
-        });
-
-        it("should add a domain", function(){
-
-        });
-
-        it("should promote to development", function(){
-
->>>>>>> master
         });
     });
 });
