@@ -39,8 +39,7 @@ describe('ngdeploy', function () {
 
     describe('.addDomain()', function(){
         before(function(){
-            clearConfig();
-            ngdeploy.login({global:1, test:1, accountToken:"global token"});
+            ngdeploy.login({global:1, accountToken:"global token"});
         });
 
         context('requires an domain, id, and access token', function(){
@@ -60,13 +59,13 @@ describe('ngdeploy', function () {
             });
 
             it('sets the global access key', function(){
-                ngdeploy.login({global:1, test:1, accountToken:"global token"});
+                ngdeploy.login({global:1, accountToken:"global token"});
                 ngdeploy.readngdeploy();
                 assert.equal(ngdeploy.get("accountToken"), "global token");
             });
 
             it('sets the local access key', function(){
-                ngdeploy.login({local:1, test:1, accountToken:"local token"});
+                ngdeploy.login({global:0, accountToken:"local token"});
                 ngdeploy.readngdeploy();
                 assert.equal(ngdeploy.get("accountToken"), "local token");
             });
@@ -168,44 +167,35 @@ describe('ngdeploy', function () {
             ngdeploy.readngdeploy();
             assert.equal(ngdeploy.get("accountToken"), "local token");
         });
-
-        after(function () {
-            clearConfig();
-        });
-
     });
 
     describe("end to end test", function(){
-        it("should log the user in", function(){
-
+        it("log the user in", function(){
+            //ngdeploy.login('test key');
         });
 
-        it("should create an application", function(){
-
+        it("create an application", function(){
+            //ngdeploy.create(test);
         });
 
-        it("should initialize the test application", function(){
-
+        it("initialize the test application", function(){
+            //ngdeploy.init(test);
         });
 
-        it("should push it to development", function(){
-
+        it("push it to development", function(){
+            //ngdeploy.push();
         });
 
-        it("should promote to staging", function(){
-
+        it("promote to staging", function(){
+            //ngdeploy.promote('staging');
         });
 
-        it("should promote to development", function(){
-
+        it("promote to production", function(){
+            //ngdeploy.promote('production');
         });
 
-        it("should add a domain", function(){
-
-        });
-
-        it("should promote to development", function(){
-
+        it("add a domain", function(){
+            //domains.add('http://ngdeploy.org');
         });
     });
 });
