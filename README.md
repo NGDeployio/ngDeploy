@@ -25,14 +25,7 @@ Example:
 ```
 ## First steps
 
-### 1. Install NGDeploy
-
-**Example**
-```shell
-npm install -g ngdeploy 
-```
-
-### 2. Login
+### 1. Login
 [Generate an account token here.](https://ngdeploy.com/#!/?redirectTo=private.accounts) We'll set the account token globally using the following command.
 **Format**
 > ngdeploy login
@@ -44,7 +37,7 @@ $ prompt: Open this link in a browser to register: https://ngdeploy.com/#!/?redi
 $ prompt: Account Token to use, by default global ~/.ngdeploy:  **************
 ```
 
-### 3. Create
+### 2. Create
 Creating your first application is as easy as:
 
 **Format**  
@@ -56,7 +49,7 @@ ngdeploy create HelloWorld
 ```
 > Please note application names must be unique.
 
-### 4. Initialize
+### 3. Initialize
 Now we can initialize the .ngdeploy configuration file using:
 **Format**
 > ngdeploy init \<Application Name> \<Distribution directory>
@@ -66,13 +59,15 @@ Now we can initialize the .ngdeploy configuration file using:
 ngdeploy init HelloWorld .  
 ```
 
-### 5. Push
+### 4. Push
 > ngdeploy push
 
 **Example**  
 ```shell
 ngdeploy push
 ```
+
+## Other
 
 ### Environment
 Environmental variables can be injected into a SPA using the setEnv command. Upon a 
