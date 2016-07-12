@@ -167,11 +167,6 @@ describe('ngdeploy', function () {
             ngdeploy.readngdeploy();
             assert.equal(ngdeploy.get("accountToken"), "local token");
         });
-
-        after(function () {
-            clearConfig();
-        });
-
     });
 
     describe("end to end test", function(){
