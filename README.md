@@ -26,10 +26,10 @@ Example:
 ## First steps
 
 ### 1. Login
-[Generate an account token here.](https://ngdeploy.com/#!/?redirectTo=private.accounts) We'll set the account token globally using the following command.
+[Generate an account token here](https://ngdeploy.com/#!/?redirectTo=private.accounts) and then we can set the account token globally using the following command.
 
 **Format**
-> ngdeploy login
+> ngdeploy login -g
 
 **Example**
 ```shell
