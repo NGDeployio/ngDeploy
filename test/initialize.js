@@ -39,7 +39,6 @@ describe('ngdeploy', function () {
 
     describe('.addDomain()', function(){
         before(function(){
-            clearConfig();
             ngdeploy.login({global:1, test:1, accountToken:"global token"});
         });
 
