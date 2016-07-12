@@ -39,7 +39,7 @@ describe('ngdeploy', function () {
 
     describe('.addDomain()', function(){
         before(function(){
-            ngdeploy.login({global:1, test:1, accountToken:"global token"});
+            ngdeploy.login({global:1, accountToken:"global token"});
         });
 
         context('requires an domain, id, and access token', function(){
@@ -59,13 +59,13 @@ describe('ngdeploy', function () {
             });
 
             it('sets the global access key', function(){
-                ngdeploy.login({global:1, test:1, accountToken:"global token"});
+                ngdeploy.login({global:1, accountToken:"global token"});
                 ngdeploy.readngdeploy();
                 assert.equal(ngdeploy.get("accountToken"), "global token");
             });
 
             it('sets the local access key', function(){
-                ngdeploy.login({local:1, test:1, accountToken:"local token"});
+                ngdeploy.login({global:0, accountToken:"local token"});
                 ngdeploy.readngdeploy();
                 assert.equal(ngdeploy.get("accountToken"), "local token");
             });

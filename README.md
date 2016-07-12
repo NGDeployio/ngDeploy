@@ -13,12 +13,12 @@ Install this globally and you'll have access to the `ngdeploy` command anywhere 
 ## Usage
 ```shell
 $ ngdeploy --help
-1.    $ ngdeploy set -g -a <AccountToken>
+1.    $ ngdeploy login
 2.    $ ngdeploy create <appName>
 3.    $ ngdeploy init <appName> <distDir>
 4.    $ ngdeploy push
 Example: 
-1.    $ ngdeploy set -g -a 123456789
+1.    $ ngdeploy login
 2.    $ ngdeploy create helloApp
 3.    $ ngdeploy init helloApp ./dist
 4.    $ ngdeploy push
