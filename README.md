@@ -42,16 +42,20 @@ $ prompt: Account Token to use, by default global ~/.ngdeploy:  **************
 Creating your first application is as easy as:
 
 **Format**  
+
 > ngdeploy create \<Application Name> 
 
 **Example**  
+
 ```shell
 $ ngdeploy create HelloWorld
 ```
-> Please note application names must be unique.
+
+> Please note application names must be globally unique.
 
 ### 3. Initialize
-Now we can initialize the .ngdeploy configuration file using:
+Now we can initialize the **.ngdeploy** configuration file using **init**. **.ngdeploy** also holds the Account Token
+, Distribution directory, Application name, and in the future additional configuration information.
 
 **Format**
 > ngdeploy init \<Application Name> \<Distribution directory>
@@ -62,6 +66,9 @@ ngdeploy init HelloWorld .
 ```
 
 ### 4. Push
+Push synchronizes the **Distribution directory** with our cloud. It'll compare the MD5 hash of 
+the files with what's currently stored in the cloud and only upload files that have changed.
+
 > ngdeploy push
 
 **Example**  
