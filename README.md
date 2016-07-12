@@ -27,12 +27,13 @@ Example:
 
 ### 1. Login
 [Generate an account token here.](https://ngdeploy.com/#!/?redirectTo=private.accounts) We'll set the account token globally using the following command.
+
 **Format**
 > ngdeploy login
 
 **Example**
 ```shell
-ngdeploy login 
+$ ngdeploy login 
 $ prompt: Open this link in a browser to register: https://ngdeploy.com/#!/?redirectTo=private.accounts
 $ prompt: Account Token to use, by default global ~/.ngdeploy:  **************
 ```
@@ -45,12 +46,13 @@ Creating your first application is as easy as:
 
 **Example**  
 ```shell
-ngdeploy create HelloWorld
+$ ngdeploy create HelloWorld
 ```
 > Please note application names must be unique.
 
 ### 3. Initialize
 Now we can initialize the .ngdeploy configuration file using:
+
 **Format**
 > ngdeploy init \<Application Name> \<Distribution directory>
 
