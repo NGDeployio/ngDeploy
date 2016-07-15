@@ -61,7 +61,7 @@ program
 
 program
     .command('set')
-    .option('-g, --global', 'set globally into ~/.ngdeploy', null, 0)
+    .option('-g, --global', 'set globally into ~/.ngdeploy', null, null)
     .option('-a, --accountToken <token>', 'use the access token',null,null)
     .action(function (opts) {
         ng.setAccountToken(opts.accountToken, opts.global);
@@ -85,21 +85,21 @@ program
 
 program
     .command('clean')
-    .option('-g, --global','remove global configuration at ~/.ngdeploy')
-    .option('-l, --local','remove local configuration at ./')
+    .option('-g, --global','remove global configuration at ~/.ngdeploy',null,null)
+    .option('-l, --local','remove local configuration at ./',null, null)
     .description('remove .ngdeploy configuration')
     .action(ng.clean);
 
 
 program
     .command("login")
-    .option('-g, --global','globally login')
-    .option('-a, --accountToken <token>','specify account token')
+    .option('-g, --global','globally login', null, true)
+    .option('-a, --accountToken <token>','specify account token',null, null)
     .action(ng.login);
 
 program
     .command("logout")
-    .option('-g, --global','globally logout')
+    .option('-g, --global','globally logout', null, null)
     .action(ng.logout);
 
 
