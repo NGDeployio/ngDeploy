@@ -91,7 +91,23 @@ the files with what's currently stored in the cloud and only upload files that h
 ngdeploy push
 ```
 
-## Other
+## Commands
+
+**The command `ngdeploy --help` lists the available commands and `ngdeploy <command> --help` displays additional information about a command.**
+
+For project-specific commands, you must either be inside a project directory with an
+active `.ngdeploy` file.
+
+Below is a brief list of the available commands and their function:
+
+### Administrative Commands
+
+Command | Description
+------- | -----------
+**login** | Authenticate the terminal with ngDeploy
+**logout** | Destroy the authentication information
+**list** | Print a list of all of your ngDeploy apps.
+**help** | Display help information about the CLI or specific commands.
 
 ### Custom Domain
 <!--Additional documentation can be found at http://ngdeploy.com/docs/custom-domains.-->

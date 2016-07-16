@@ -5,6 +5,7 @@ var program = require('commander');
 var ng    = require('../lib/cli');
 var pkg   = require('../package');
 var domain = require('../lib/domain');
+var utils = require('../lib/utils');
 
 program
     .version(pkg.version);
@@ -20,6 +21,14 @@ program
           ng.initWithPrompt();
         }
      });
+
+program
+    .command('open')
+    .description('Open the current web app in the browser.')
+    .option('-n, --appName','Open the specific application by appName. ',null,null)
+    .option('-i, --appId', 'Open the specific application by appId', null,null)
+    .option('-s, --stage', 'Specify the stage, default development',/^(development|staging|production)$/i,'development')
+    .action(utils.open);
 
 program
     .command('create <appName>')
@@ -93,7 +102,7 @@ program
 
 program
     .command("login")
-    .option('-g, --global','globally login', null, true)
+    .option('-g, --global','globally login', null, null)
     .option('-a, --accountToken <token>','specify account token',null, null)
     .action(ng.login);
 
