@@ -54,11 +54,7 @@ program
 program
     .command('domain <add> <appId> <domainUrl>')
     .option('-a, --accountToken <token>', 'use the access token',null,null)
-    .action(function (action,id, domainUrl, opts) {
-        //ng.delete(id,domainUrl, opts.accountToken);
-        //console.log(action, id,domainUrl, opts.accountToken);
-        domain.perform(action,id,domainUrl,opts.accountToken);
-    });
+    .action(domain.perform);
 
 
 program
