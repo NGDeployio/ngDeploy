@@ -86,12 +86,19 @@ program
     });
 
 program
+    .command('https <action>')
+    .option('--appId <id>', 'App id to add the cert to', null,null)
+    .option('-k, --pathToKey <path>', "Path to .key file.", null,null)
+    .option('-c, --pathToCert <path>', "Path to .cert file.", null,null)
+    .option('-a, --accountToken <token>', 'use the access token',null,null)
+    .action(https.perform);
+
+
+program
     .command('promote')
     .option('-t, --to <target>', '[staging,production]', /^(staging|production)$/i, 'staging')
     .description('Promote an application to staging or production')
-    .action(function (opts) {
-          ng.promote(opts.to);
-        });
+    .action(ng.promote);
 
 program
     .command('list')
