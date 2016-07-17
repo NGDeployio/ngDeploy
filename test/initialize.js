@@ -35,6 +35,7 @@ describe('ngdeploy', function () {
     afterEach(function() {
         sandbox.restore();
         ngdeploy.set("accountToken", null);
+        clearConfig();
     });
 
     describe('.addDomain()', function(){
