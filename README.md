@@ -3,6 +3,14 @@
 [![TravisCI Status](https://travis-ci.org/NGDeployio/ngDeploy.svg)](https://travis-ci.org/NGDeployio)
 [![bitHound Overall Score](https://www.bithound.io/github/NGDeployio/ngDeploy/badges/score.svg)](https://www.bithound.io/github/NGDeployio/ngDeploy)
 [![https://david-dm.org/ngdeployio/ngdeploy](https://david-dm.org/ngdeployio/ngdeploy.svg)](https://david-dm.org/ngdeployio/ngdeploy)
+ 
+[![HTTPS](https://img.shields.io/badge/✔-HTTPS Support-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/https)
+[![HTTPS](https://img.shields.io/badge/✔-Custom Domains-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/custom-domains)
+
+[![Grunt](https://img.shields.io/badge/✔-Grunt-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/grunt)
+[![Bower](https://img.shields.io/badge/✔-Bower-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/bower)
+[![Github](https://img.shields.io/badge/✔-Github-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/github)
+
 
 > Angular and single page application hosting CLI tool.
 
