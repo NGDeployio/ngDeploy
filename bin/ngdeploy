@@ -114,7 +114,6 @@ program
     .option('-g, --global','globally logout', null, null)
     .action(ng.logout);
 
-
 program.on('--help', function () {
          ng.additionalHelp();
     });
