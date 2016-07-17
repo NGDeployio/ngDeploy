@@ -7,10 +7,6 @@ var pkg   = require('../package');
 var domain = require('../lib/domain');
 var utils = require('../lib/utils');
 var https = require('../lib/https');
-var api = require('../lib/api');
-var logger = require('../lib/logger');
-
-const chalk = require('chalk');
 
 program
     .version(pkg.version);
@@ -70,14 +66,6 @@ program
       });
 
 program
-    .command('https <action>')
-    .description('')
-    .option('-a, --appId', 'Application Id',null,null)
-    .option('-p, --pathToKey','Path to key file.', null,null)
-    .option('-c, --pathToCert', "Path to cert file", null,null)
-    .action(https.perform);
-
-program
     .command('set')
     .option('-g, --global', 'set globally into ~/.ngdeploy', null, null)
     .option('-a, --accountToken <token>', 'use the access token',null,null)
@@ -88,6 +76,7 @@ program
 program
     .command('https <action>')
     .option('--appId <id>', 'App id to add the cert to', null,null)
+    .option('-d, --domain <domain>', 'Domain to assign https to',null,null)
     .option('-k, --pathToKey <path>', "Path to .key file.", null,null)
     .option('-c, --pathToCert <path>', "Path to .cert file.", null,null)
     .option('-a, --accountToken <token>', 'use the access token',null,null)
