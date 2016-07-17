@@ -6,12 +6,19 @@
 
 **Implemented enhancements:**
 
+- CLI Table for ngdeploy list  [\#27](https://github.com/NGDeployio/ngDeploy/issues/27)
+- Adding domain upgrade [\#26](https://github.com/NGDeployio/ngDeploy/issues/26)
+- Adding Cache purge  [\#25](https://github.com/NGDeployio/ngDeploy/issues/25)
+- https support [\#24](https://github.com/NGDeployio/ngDeploy/issues/24)
+- Adding/removing domains [\#23](https://github.com/NGDeployio/ngDeploy/issues/23)
 - GitHook: Need to register hook id and repoId to avoid duplicate hooks.  [\#11](https://github.com/NGDeployio/ngDeploy/issues/11)
 - Payment processing  [\#10](https://github.com/NGDeployio/ngDeploy/issues/10)
 - Simple website builder  [\#9](https://github.com/NGDeployio/ngDeploy/issues/9)
 - Lambda: S3 copy over dev/prod buckets [\#8](https://github.com/NGDeployio/ngDeploy/issues/8)
 - Lambda: Github to S3 Sync using AWS Lambda [\#7](https://github.com/NGDeployio/ngDeploy/issues/7)
 - Github Integration / Sync with a static website repo [\#5](https://github.com/NGDeployio/ngDeploy/issues/5)
+- CLI \<S3\> package requires Python 2.7 [\#2](https://github.com/NGDeployio/ngDeploy/issues/2)
+- Fixed up Readme and introduced ngdeploy login [\#22](https://github.com/NGDeployio/ngDeploy/pull/22) ([marek5050](https://github.com/marek5050))
 - Attach domains and logging configuration.  [\#20](https://github.com/NGDeployio/ngDeploy/pull/20) ([marek5050](https://github.com/marek5050))
 - Merging additional documentation [\#18](https://github.com/NGDeployio/ngDeploy/pull/18) ([marek5050](https://github.com/marek5050))
 
@@ -21,6 +28,7 @@
 
 **Merged pull requests:**
 
+- Added https support.  [\#28](https://github.com/NGDeployio/ngDeploy/pull/28) ([marek5050](https://github.com/marek5050))
 - Dev [\#19](https://github.com/NGDeployio/ngDeploy/pull/19) ([mbejda](https://github.com/mbejda))
 
 ## [0.2.5](https://github.com/NGDeployio/ngDeploy/tree/0.2.5) (2016-07-08)
