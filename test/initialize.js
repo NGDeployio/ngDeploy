@@ -44,11 +44,7 @@ describe('ngdeploy', function () {
 
         context('requires an domain, id, and access token', function(){
             it('succeeds with all', function(){
-                return expect(domains.add(1, 'http://google.com')).to.not.be.an("error");
-            });
-
-            it('fails otherwise', function(){
-                return expect(domains.add(null,'http://google.com')).to.be.an('error');
+                return expect(domains.perform('add',1, 'http://google.com',{})).to.not.be.an("error");
             });
         });
     });
