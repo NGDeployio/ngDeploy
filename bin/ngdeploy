@@ -6,6 +6,11 @@ var ng    = require('../lib/cli');
 var pkg   = require('../package');
 var domain = require('../lib/domain');
 var utils = require('../lib/utils');
+var https = require('../lib/https');
+var api = require('../lib/api');
+var logger = require('../lib/logger');
+
+const chalk = require('chalk');
 
 program
     .version(pkg.version);
@@ -65,12 +70,20 @@ program
       });
 
 program
+    .command('https <action>')
+    .description('')
+    .option('-a, --appId', 'Application Id',null,null)
+    .option('-p, --pathToKey','Path to key file.', null,null)
+    .option('-c, --pathToCert', "Path to cert file", null,null)
+    .action(https.perform);
+
+program
     .command('set')
     .option('-g, --global', 'set globally into ~/.ngdeploy', null, null)
     .option('-a, --accountToken <token>', 'use the access token',null,null)
     .action(function (opts) {
         ng.setAccountToken(opts.accountToken, opts.global);
-      });
+    });
 
 program
     .command('promote')
@@ -84,9 +97,7 @@ program
     .command('list')
     .option('-a, --accountToken <token>', 'use the access token',null,null)
     .description('List all of your apps')
-    .action(function (opts) {
-        ng.list(opts.accountToken);
-    });
+    .action(ng.list);
 
 program
     .command('clean')
