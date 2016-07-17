@@ -1,7 +1,7 @@
 {
   "name": "ngdeploy",
   "description": "Deploying SPA's and Static pages into the cloud.",
-  "version": "0.3.2",
+  "version": "0.3.6",
   "homepage": "https://github.com/NGDeployio/ngdeploy",
   "author": "Milos Bejda (https://github.com/mbejda)",
   "repository": {

@@ -114,8 +114,8 @@ Command | Description
 
 **Format**
 
-> $ ngdeploy domain add --domain \<domain> --appId \<appId> --appName \<appName> 
-> $ ngdeploy domain remove --domain \<domain> --appId \<appId> --appName \<appName>
+> $ ngdeploy domain add --domain \<domain> --appId \<appId> --appName \<appName>   
+> $ ngdeploy domain remove --domain \<domain> --appId \<appId> --appName \<appName>  
 
 **Example**
 
@@ -129,8 +129,8 @@ $ ngdeploy domain add --domain ngdeploy.com --appName ngdeploy
 
 **Format**
 
-> $ ngdeploy ssl add -k \<path to key>
-> $ ngdeploy ssl remove -k \<path to key>  
+> $ ngdeploy ssl add -k \<path to key>  
+> $ ngdeploy ssl remove -k \<path to key>    
 
 **Example**
 
