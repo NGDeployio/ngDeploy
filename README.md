@@ -19,12 +19,12 @@ Install this globally and you'll have access to the `ngdeploy` command anywhere 
 
 ```shell
 $ ngdeploy --help
-1.    $ ngdeploy login
+1.    $ ngdeploy login -g
 2.    $ ngdeploy create <appName>
 3.    $ ngdeploy init <appName> <distDir>
 4.    $ ngdeploy push
 Example: 
-1.    $ ngdeploy login
+1.    $ ngdeploy login -g
 2.    $ ngdeploy create helloApp
 3.    $ ngdeploy init helloApp ./dist
 4.    $ ngdeploy push
@@ -38,12 +38,12 @@ To authenticate the terminal copy and paste the account token from the profile p
 
 **Format**
 
-> ngdeploy login
+> ngdeploy login -g 
 
 **Example**
 
 ```shell
-$ ngdeploy login 
+$ ngdeploy login -g 
 $ prompt: Open this link in a browser to register: https://ngdeploy.com/#!/?redirectTo=private.accounts
 $ prompt: Account Token to use:  **************
 ```
@@ -95,7 +95,7 @@ ngdeploy push
 
 **The command `ngdeploy --help` lists the available commands and `ngdeploy <command> --help` displays additional information about a command.**
 
-For project-specific commands, you must either be inside a project directory with an
+For project-specific commands, you must be inside a project directory with an
 active `.ngdeploy` file.
 
 Below is a brief list of the available commands and their function:
@@ -106,6 +106,8 @@ Command | Description
 ------- | -----------
 **login** | Authenticate the terminal with ngDeploy
 **logout** | Destroy the authentication information
+**https** | Commands for managing the HTTPs functionality
+**domain** |  For managing the domains of an app
 **list** | Print a list of all of your ngDeploy apps.
 **help** | Display help information about the CLI or specific commands.
 
