@@ -5,6 +5,8 @@ var program = require('commander');
 var ng    = require('../lib/cli');
 var pkg   = require('../package');
 var domain = require('../lib/domain');
+var utils = require('../lib/utils');
+var https = require('../lib/https');
 
 program
     .version(pkg.version);
@@ -20,6 +22,14 @@ program
           ng.initWithPrompt();
         }
      });
+
+program
+    .command('open')
+    .description('Open the current web app in the browser.')
+    .option('-n, --appName','Open the specific application by appName. ',null,null)
+    .option('-i, --appId', 'Open the specific application by appId', null,null)
+    .option('-s, --stage', 'Specify the stage, default development',/^(development|staging|production)$/i,'development')
+    .action(utils.open);
 
 program
     .command('create <appName>')
@@ -45,11 +55,7 @@ program
 program
     .command('domain <add> <appId> <domainUrl>')
     .option('-a, --accountToken <token>', 'use the access token',null,null)
-    .action(function (action,id, domainUrl, opts) {
-        //ng.delete(id,domainUrl, opts.accountToken);
-        //console.log(action, id,domainUrl, opts.accountToken);
-        domain.perform(action,id,domainUrl,opts.accountToken);
-    });
+    .action(domain.perform);
 
 
 program
@@ -61,47 +67,52 @@ program
 
 program
     .command('set')
-    .option('-g, --global', 'set globally into ~/.ngdeploy', null, 0)
+    .option('-g, --global', 'set globally into ~/.ngdeploy', null, null)
     .option('-a, --accountToken <token>', 'use the access token',null,null)
     .action(function (opts) {
         ng.setAccountToken(opts.accountToken, opts.global);
-      });
+    });
+
+program
+    .command('https <action>')
+    .option('--appId <id>', 'App id to add the cert to', null,null)
+    .option('-d, --domain <domain>', 'Domain to assign https to',null,null)
+    .option('-k, --pathToKey <path>', "Path to .key file.", null,null)
+    .option('-c, --pathToCert <path>', "Path to .cert file.", null,null)
+    .option('-a, --accountToken <token>', 'use the access token',null,null)
+    .action(https.perform);
+
 
 program
     .command('promote')
     .option('-t, --to <target>', '[staging,production]', /^(staging|production)$/i, 'staging')
     .description('Promote an application to staging or production')
-    .action(function (opts) {
-          ng.promote(opts.to);
-        });
+    .action(ng.promote);
 
 program
     .command('list')
     .option('-a, --accountToken <token>', 'use the access token',null,null)
     .description('List all of your apps')
-    .action(function (opts) {
-        ng.list(opts.accountToken);
-    });
+    .action(ng.list);
 
 program
     .command('clean')
-    .option('-g, --global','remove global configuration at ~/.ngdeploy')
-    .option('-l, --local','remove local configuration at ./')
+    .option('-g, --global','remove global configuration at ~/.ngdeploy',null,null)
+    .option('-l, --local','remove local configuration at ./',null, null)
     .description('remove .ngdeploy configuration')
     .action(ng.clean);
 
 
 program
     .command("login")
-    .option('-g, --global','globally login')
-    .option('-a, --accountToken <token>','specify account token')
+    .option('-g, --global','globally login', null, null)
+    .option('-a, --accountToken <token>','specify account token',null, null)
     .action(ng.login);
 
 program
     .command("logout")
-    .option('-g, --global','globally logout')
+    .option('-g, --global','globally logout', null, null)
     .action(ng.logout);
-
 
 program.on('--help', function () {
          ng.additionalHelp();
