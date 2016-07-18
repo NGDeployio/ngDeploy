@@ -61,7 +61,6 @@ program
 program
     .command('domain:remove')
     .option('--appId <appId>','Application id', null,null)
-    .option('-n, --appName <appName>','application name',null,null)
     .option('-a, --accountToken <token>', 'use the access token',null,null)
     .action(domain.add);
 
