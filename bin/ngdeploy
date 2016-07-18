@@ -53,7 +53,10 @@ program
 
 
 program
-    .command('domain <add> <appId> <domainUrl>')
+    .command('domain <add> ')
+    .option('-i, --appId <appId>', 'application id', null,null)
+    .option('-n, --appName <appName>','application name',null,null)
+    .option('-d, --domain <domain>', 'domain to add',null,null)
     .option('-a, --accountToken <token>', 'use the access token',null,null)
     .action(domain.perform);
 

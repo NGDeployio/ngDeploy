@@ -1,4 +1,6 @@
 # ngDeploy CLI 
+===========
+
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![TravisCI Status](https://travis-ci.org/NGDeployio/ngDeploy.svg)](https://travis-ci.org/NGDeployio)
 [![bitHound Overall Score](https://www.bithound.io/github/NGDeployio/ngDeploy/badges/score.svg)](https://www.bithound.io/github/NGDeployio/ngDeploy)
@@ -16,15 +18,15 @@
 [![Github](https://img.shields.io/badge/✔-Github-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/github)
 
 
-> Angular and single page application hosting CLI tool.
+***
+
+## Installation
 
 Install this globally and you'll have access to the `ngdeploy` command anywhere on your system.
 
 ```shell
 [sudo] npm install -g ngdeploy
 ```
-
-**Note:** The job of the ngDeploy CLI is to publish single page applications. It's preferred to install globally, but local installations will work too. [please read this](http://nodejs.org/en/blog/npm/npm-1-0-global-vs-local-installation).
 
 
 ## Usage
@@ -42,7 +44,7 @@ Example:
 4.    $ ngdeploy push
 ```
 
-## First steps
+## Getting Started
 
 ### 1. Login
 [Register or log into ngDeploy.](https://ngdeploy.com/#!/?redirectTo=private.accounts) Which will create an ngDeploy account and initiate the hosting process. 
@@ -112,7 +114,7 @@ active `.ngdeploy` file.
 
 Below is a brief list of the available commands and their function:
 
-### Administrative Commands
+### Commands
 
 Command | Description
 ------- | -----------
@@ -120,8 +122,8 @@ Command | Description
 **logout** | Destroy the authentication information
 **https** | Commands for managing the HTTPs functionality
 **domain** |  For managing the domains of an app
-**list** | Print a list of all of your ngDeploy apps.
-**help** | Display help information about the CLI or specific commands.
+**list** | Print a list of all of your ngDeploy apps
+**help** | Display help information about the CLI or specific commands
 
 ### Custom Domain
 <!--Additional documentation can be found at http://ngdeploy.com/docs/custom-domains.-->
