@@ -11,10 +11,10 @@ var https = require('../lib/https');
 program
     .version(pkg.version);
 
+
 program
     .command('init <appName> [dist]')
     .description('Initialize ngdeploy with <appName> and <distribution folder>')
-    .option('-a, --accountToken <token>', 'use the access token',null,null)
     .action(function (appName, dist, opts) {
         if (appName && dist && opts) {
           ng.init(appName, dist, opts);
@@ -45,25 +45,40 @@ program
     .action(ng.push);
 
 program
-    .command('delete <appId>')
+    .command('delete')
+    .option('--appId <appId>','Application id', null,null)
     .option('-a, --accountToken <token>', 'use the access token',null,null)
-    .action(function (id, opts) {
-        ng.delete(id, opts.accountToken);
-    });
+    .action(ng.delete);
 
 
 program
-    .command('domain <add> ')
-    .option('-i, --appId <appId>', 'application id', null,null)
-    .option('-n, --appName <appName>','application name',null,null)
+    .command('domain:add')
+    .option('--appId <appId>','Application id', null,null)
     .option('-d, --domain <domain>', 'domain to add',null,null)
     .option('-a, --accountToken <token>', 'use the access token',null,null)
-    .action(domain.perform);
+    .action(domain.add);
 
+program
+    .command('domain:remove')
+    .option('--appId <appId>','Application id', null,null)
+    .option('-n, --appName <appName>','application name',null,null)
+    .option('-a, --accountToken <token>', 'use the access token',null,null)
+    .action(domain.add);
+
+program
+    .command('domain:purge')
+    .option('--appId <appId>','Application id', null,null)
+    .option('-a, --accountToken <token>', 'use the access token',null,null)
+    .action(domain.purge);
+
+program
+    .command('domain:upgrade')
+    .option('--appId <appId>','Application id', null,null)
+    .option('-a, --accountToken <token>', 'use the access token',null,null)
+    .action(domain.upgrade);
 
 program
     .command('setEnv <appId> <stage> <kv>')
-    .option('-a, --accountToken <token>', 'use the access token',null,null)
     .action(function (appId, stage, kv) {
         ng.setEnv(appId, stage, kv);
       });
@@ -78,7 +93,7 @@ program
 
 program
     .command('https <action>')
-    .option('--appId <id>', 'App id to add the cert to', null,null)
+    .option('--appId <appId>','Application id', null,null)
     .option('-d, --domain <domain>', 'Domain to assign https to',null,null)
     .option('-k, --pathToKey <path>', "Path to .key file.", null,null)
     .option('-c, --pathToCert <path>', "Path to .cert file.", null,null)
@@ -109,7 +124,6 @@ program
 program
     .command("login")
     .option('-g, --global','globally login', null, null)
-    .option('-a, --accountToken <token>','specify account token',null, null)
     .action(ng.login);
 
 program

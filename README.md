@@ -27,7 +27,6 @@ Install this globally and you'll have access to the `ngdeploy` command anywhere 
 [sudo] npm install -g ngdeploy
 ```
 
-
 ## Usage
 
 ```shell
