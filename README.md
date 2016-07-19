@@ -128,14 +128,13 @@ Command | Description
 
 **Format**
 
-> $ ngdeploy domain add --domain \<domain> --appId \<appId> --appName \<appName>   
-> $ ngdeploy domain remove --domain \<domain> --appId \<appId> --appName \<appName>  
+> $ ngdeploy domain add --domain \<domain> --appId \<appId>   
+> $ ngdeploy domain remove --domain \<domain> --appId \<appId>  
 
 **Example**
 
 ```shell
 $ ngdeploy domain add --domain ngdeploy.com --appId 10
-$ ngdeploy domain add --domain ngdeploy.com --appName ngdeploy
 ```
 
 ### SSL for HTTPS
