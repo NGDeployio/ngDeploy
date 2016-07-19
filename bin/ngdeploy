@@ -122,6 +122,7 @@ program
 
 program
     .command("login")
+    .option('-a, --accountToken <token>', 'use the access token',null,null)
     .option('-g, --global','globally login', null, null)
     .action(ng.login);
 
