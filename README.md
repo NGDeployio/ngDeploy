@@ -1,10 +1,25 @@
 # ngDeploy CLI 
+
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![TravisCI Status](https://travis-ci.org/NGDeployio/ngDeploy.svg)](https://travis-ci.org/NGDeployio)
 [![bitHound Overall Score](https://www.bithound.io/github/NGDeployio/ngDeploy/badges/score.svg)](https://www.bithound.io/github/NGDeployio/ngDeploy)
 [![https://david-dm.org/ngdeployio/ngdeploy](https://david-dm.org/ngdeployio/ngdeploy.svg)](https://david-dm.org/ngdeployio/ngdeploy)
+ 
+[![HTTPS](https://img.shields.io/badge/✔-HTTPS Support-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/https)
+[![HTTPS](https://img.shields.io/badge/✔-Custom Domains-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/custom-domains)
+[![HTTPS](https://img.shields.io/badge/✔-Cache KeyCDN-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/cache)
+[![HTTPS](https://img.shields.io/badge/✔-Staging-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/staging)
+[![HTTPS](https://img.shields.io/badge/✔-Teams-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/teams)
+[![HTTPS](https://img.shields.io/badge/✔-Environment-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/environment)
 
-> Angular and single page application hosting CLI tool.
+[![Grunt](https://img.shields.io/badge/✔-Grunt-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/grunt)
+[![Bower](https://img.shields.io/badge/✔-Bower-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/bower)
+[![Github](https://img.shields.io/badge/✔-Github-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/github)
+
+
+***
+
+## Installation
 
 Install this globally and you'll have access to the `ngdeploy` command anywhere on your system.
 
@@ -12,25 +27,22 @@ Install this globally and you'll have access to the `ngdeploy` command anywhere 
 [sudo] npm install -g ngdeploy
 ```
 
-**Note:** The job of the ngDeploy CLI is to publish single page applications. It's preferred to install globally, but local installations will work too. [please read this](http://nodejs.org/en/blog/npm/npm-1-0-global-vs-local-installation).
-
-
 ## Usage
 
 ```shell
 $ ngdeploy --help
-1.    $ ngdeploy login
+1.    $ ngdeploy login -g
 2.    $ ngdeploy create <appName>
 3.    $ ngdeploy init <appName> <distDir>
 4.    $ ngdeploy push
 Example: 
-1.    $ ngdeploy login
+1.    $ ngdeploy login -g
 2.    $ ngdeploy create helloApp
 3.    $ ngdeploy init helloApp ./dist
 4.    $ ngdeploy push
 ```
 
-## First steps
+## Getting Started
 
 ### 1. Login
 [Register or log into ngDeploy.](https://ngdeploy.com/#!/?redirectTo=private.accounts) Which will create an ngDeploy account and initiate the hosting process. 
@@ -38,12 +50,12 @@ To authenticate the terminal copy and paste the account token from the profile p
 
 **Format**
 
-> ngdeploy login
+> ngdeploy login -g 
 
 **Example**
 
 ```shell
-$ ngdeploy login 
+$ ngdeploy login -g 
 $ prompt: Open this link in a browser to register: https://ngdeploy.com/#!/?redirectTo=private.accounts
 $ prompt: Account Token to use:  **************
 ```
@@ -95,27 +107,29 @@ ngdeploy push
 
 **The command `ngdeploy --help` lists the available commands and `ngdeploy <command> --help` displays additional information about a command.**
 
-For project-specific commands, you must either be inside a project directory with an
+For project-specific commands, you must be inside a project directory with an
 active `.ngdeploy` file.
 
 Below is a brief list of the available commands and their function:
 
-### Administrative Commands
+### Commands
 
 Command | Description
 ------- | -----------
 **login** | Authenticate the terminal with ngDeploy
 **logout** | Destroy the authentication information
-**list** | Print a list of all of your ngDeploy apps.
-**help** | Display help information about the CLI or specific commands.
+**https** | Commands for managing the HTTPs functionality
+**domain** |  For managing the domains of an app
+**list** | Print a list of all of your ngDeploy apps
+**help** | Display help information about the CLI or specific commands
 
 ### Custom Domain
 <!--Additional documentation can be found at http://ngdeploy.com/docs/custom-domains.-->
 
 **Format**
 
-> $ ngdeploy domain add --domain \<domain> --appId \<appId> --appName \<appName> 
-> $ ngdeploy domain remove --domain \<domain> --appId \<appId> --appName \<appName>
+> $ ngdeploy domain add --domain \<domain> --appId \<appId> --appName \<appName>   
+> $ ngdeploy domain remove --domain \<domain> --appId \<appId> --appName \<appName>  
 
 **Example**
 
@@ -129,8 +143,8 @@ $ ngdeploy domain add --domain ngdeploy.com --appName ngdeploy
 
 **Format**
 
-> $ ngdeploy ssl add -k \<path to key>
-> $ ngdeploy ssl remove -k \<path to key>  
+> $ ngdeploy ssl add -k \<path to key>  
+> $ ngdeploy ssl remove -k \<path to key>    
 
 **Example**
 
