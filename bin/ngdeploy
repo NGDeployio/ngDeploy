@@ -41,7 +41,7 @@ program
 
 program
     .command('push')
-    .description('Push the distribution folder into the cloud. Take it away!')
+    .description('deploy the distribution directory to your ngDeploy project')
     .action(ng.push);
 
 program
@@ -102,6 +102,7 @@ program
 
 program
     .command('promote')
+    .option('--appId <appId>', 'app id to promote')
     .option('-t, --to <target>', '[staging,production]', /^(staging|production)$/i, 'staging')
     .description('Promote an application to staging or production')
     .action(ng.promote);
