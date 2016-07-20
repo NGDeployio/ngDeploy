@@ -5,13 +5,6 @@
 [![bitHound Overall Score](https://www.bithound.io/github/NGDeployio/ngDeploy/badges/score.svg)](https://www.bithound.io/github/NGDeployio/ngDeploy)
 [![https://david-dm.org/ngdeployio/ngdeploy](https://david-dm.org/ngdeployio/ngdeploy.svg)](https://david-dm.org/ngdeployio/ngdeploy)
  
-[![HTTPS](https://img.shields.io/badge/✔-HTTPS Support-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/https)
-[![HTTPS](https://img.shields.io/badge/✔-Custom Domains-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/custom-domains)
-[![HTTPS](https://img.shields.io/badge/✔-Cache KeyCDN-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/cache)
-[![HTTPS](https://img.shields.io/badge/✔-Staging-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/staging)
-[![HTTPS](https://img.shields.io/badge/✔-Teams-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/teams)
-[![HTTPS](https://img.shields.io/badge/✔-Environment-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/environment)
-
 [![Grunt](https://img.shields.io/badge/✔-Grunt-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/grunt)
 [![Bower](https://img.shields.io/badge/✔-Bower-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/bower)
 [![Github](https://img.shields.io/badge/✔-Github-brightgreen.svg?style=flat-square)](http://ngdeploy.com/docs/github)
