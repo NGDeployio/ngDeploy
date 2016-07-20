@@ -24,7 +24,6 @@
     "angular"
   ],
   "preferGlobal": true,
-  "readme":"https://github.com/NGDeployio/ngDeploy/blob/master/README.md",
   "bin": {
     "ngdeploy": "./bin/ngdeploy"
   },
